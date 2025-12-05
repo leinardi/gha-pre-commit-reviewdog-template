@@ -63,7 +63,7 @@ runs:
         # Do not fail here; let reviewdog decide
         exit 0
 
-    - name: Report via reviewdog
+    - name: Report findings via reviewdog
       if: steps.run_hook.outputs.exitcode != '0'
       env:
         REVIEWDOG_GITHUB_API_TOKEN: ${{ inputs.github-token }}

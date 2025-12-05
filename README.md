@@ -11,6 +11,12 @@ Typical use case:
 - Annotate problems directly on the PR diff
 - Fail the job if violations are found
 
+## Requirements
+
+- A `.pre-commit-config.yaml` in your repository with the `<HOOK_ID>` hook enabled
+- GitHub Actions enabled on the repository
+- `secrets.GITHUB_TOKEN` available (default on GitHub-hosted runners)
+
 ## Inputs
 
 | Name           | Required | Description                                         |
@@ -48,4 +54,18 @@ jobs:
           from-ref: ${{ github.event.pull_request.base.sha }}
           to-ref: ${{ github.event.pull_request.head.sha }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
+````
+
+## Versioning
+
+It’s recommended to pin to the major version:
+
+```yaml
+uses: <OWNER>/<REPO>@v1
+```
+
+For fully reproducible behavior, pin to an exact tag:
+
+```yaml
+uses: <OWNER>/<REPO>@v1.0.0
 ```
