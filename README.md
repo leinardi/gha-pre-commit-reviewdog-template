@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Run <TOOL> via pre-commit + reviewdog
         uses: <OWNER>/<REPO>@v1
